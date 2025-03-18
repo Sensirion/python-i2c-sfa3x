@@ -40,9 +40,9 @@ with ShdlcSerialPort(port=args.serial_port, baudrate=460800) as port:
     print(f"device_marking: {device_marking}; "
           )
     sensor.start_continuous_measurement()
-    for i in range(50):
+    for i in range(100):
         try:
-            time.sleep(1.0)
+            time.sleep(0.5)
             (hcho, humidity, temperature
              ) = sensor.read_measured_values()
             print(f"hcho: {hcho}; "
